@@ -21,4 +21,9 @@ namespace PatternStrategy_Duck
     {
         public void fly() => Console.WriteLine("I cannot fly");
     }
+
+    public class FlyRocketPowered : IFlyBehavior
+    {
+        public void fly() => Console.WriteLine("I am flying with a rocket");
+    }
 }
