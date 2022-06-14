@@ -23,19 +23,12 @@ namespace PatternFactory_PizzaStore
 
     class NYPizzaStore : PizzaStore
     {
+        public PizzaIngredientFactory ingredientFactory = new NYPizzaIngredientFactory();
         protected override Pizza createPizza(string type) => type switch
         {
-            "cheese" => new NYStyleCheesePizza(),
-            _ => throw new NotImplementedException(),
-        };
-    }
-
-    class ChicagoPizzaStore : PizzaStore
-    {
-        protected override Pizza createPizza(string type) => type switch
-        {
-            "cheese" => new ChicagoStyleCheesePizza(),
-            _ => throw new NotImplementedException(),
+            "cheese" => new CheesePizza(ingredientFactory) { Name = "New York Style Cheese Pizza" },
+            "veggie" => new ClamPizza(ingredientFactory) { Name = "New York Style Clam Pizza" },
+            _ => null
         };
     }
 }

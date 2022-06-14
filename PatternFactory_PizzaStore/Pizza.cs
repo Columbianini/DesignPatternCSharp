@@ -9,21 +9,15 @@ namespace PatternFactory_PizzaStore
     abstract class Pizza
     {
         public string Name { get; set; }
-        public string Dough { get; set; }
-        public string Sauce { get; set; }
-        public List<string> Toppings { get; set; } = new List<string>();
+        public Dough Dough { get; set; }
+        public Sauce Sauce { get; set; }
 
-        public void prepare()
-        {
-            Console.WriteLine($"Preparing {Name}");
-            Console.WriteLine("Tossing dough...");
-            Console.WriteLine("Adding sauce...");
-            Console.WriteLine("Adding toppings: ");
-            foreach(var topping in Toppings)
-            {
-                Console.WriteLine($"   {topping}");
-            }
-        }
+        public Cheese Cheese { get; set; }
+
+        public Clams Clams { get; set; }
+        //public List<string> Toppings { get; set; } = new List<string>();
+
+        public abstract void prepare();
 
         public void bake() => Console.WriteLine("Bake for 25 minutes at 350");
 
@@ -32,28 +26,66 @@ namespace PatternFactory_PizzaStore
         public void box() => Console.WriteLine("Place pizza in official PizzaStore box");
     }
 
-    class ChicagoStyleCheesePizza: Pizza
+    class CheesePizza: Pizza
     {
-        public ChicagoStyleCheesePizza()
+        PizzaIngredientFactory ingredientFactory;
+
+        public CheesePizza(PizzaIngredientFactory ingredientFactory)
         {
-            Name = "Chicago Style Deep Dish Cheese Pizza";
-            Dough = "Extra Thick Crust Dough";
-            Sauce = "Plum Tomato Sauce";
-            Toppings.Add("Shredded Mozzarella Cheese");
+            this.ingredientFactory = ingredientFactory;
         }
-        public override void cut() => Console.WriteLine("Cutting the pizza into square slices");
+
+        public override void prepare()
+        {
+            Console.WriteLine($"Preparing {Name}");
+            Dough = ingredientFactory.createDough();
+            Sauce = ingredientFactory.createSauce();
+            Cheese = ingredientFactory.createCheese();
+        }
+
     }
 
-    class NYStyleCheesePizza: Pizza
+    class ClamPizza : Pizza
     {
+        PizzaIngredientFactory ingredientFactory;
 
-        public NYStyleCheesePizza()
+        public ClamPizza(PizzaIngredientFactory ingredientFactory)
         {
-            Name = "NY Style Sauce and Cheese Pizza";
-            Dough = "Thin Crust Dough";
-            Sauce = "Marinara Sauce";
-            Toppings.Add("Grated Reggiano Cheese");
+            this.ingredientFactory = ingredientFactory;
+        }
+
+        public override void prepare()
+        {
+            Console.WriteLine($"Preparing {Name}");
+            Dough = ingredientFactory.createDough();
+            Sauce = ingredientFactory.createSauce();
+            Cheese = ingredientFactory.createCheese();
+            Clams = ingredientFactory.createClam();
         }
     }
+
+    //class ChicagoStyleCheesePizza: Pizza
+    //{
+    //    public ChicagoStyleCheesePizza()
+    //    {
+    //        Name = "Chicago Style Deep Dish Cheese Pizza";
+    //        Dough = "Extra Thick Crust Dough";
+    //        Sauce = "Plum Tomato Sauce";
+    //        Toppings.Add("Shredded Mozzarella Cheese");
+    //    }
+    //    public override void cut() => Console.WriteLine("Cutting the pizza into square slices");
+    //}
+
+    //class NYStyleCheesePizza: Pizza
+    //{
+
+    //    public NYStyleCheesePizza()
+    //    {
+    //        Name = "NY Style Sauce and Cheese Pizza";
+    //        Dough = "Thin Crust Dough";
+    //        Sauce = "Marinara Sauce";
+    //        Toppings.Add("Grated Reggiano Cheese");
+    //    }
+    //}
 
 }
