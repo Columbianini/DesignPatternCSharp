@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatternDecorator_CoffeeShop
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatternFactory_PizzaStore", "PatternFactory_PizzaStore\PatternFactory_PizzaStore.csproj", "{A86DC505-01B2-41A4-91E9-016049073660}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternSingleton_ChocolateBolier", "PatternSingleton_ChocolateBolier\PatternSingleton_ChocolateBolier.csproj", "{4E990543-FC6A-484F-A055-FB5B96FA426D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatternSingleton_ChocolateBolier", "PatternSingleton_ChocolateBolier\PatternSingleton_ChocolateBolier.csproj", "{4E990543-FC6A-484F-A055-FB5B96FA426D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternCommand_RemoteController", "PatternCommand_RemoteController\PatternCommand_RemoteController.csproj", "{59E7F0DE-0914-42D6-9EE9-4F8743EC31A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4E990543-FC6A-484F-A055-FB5B96FA426D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E990543-FC6A-484F-A055-FB5B96FA426D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E990543-FC6A-484F-A055-FB5B96FA426D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59E7F0DE-0914-42D6-9EE9-4F8743EC31A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59E7F0DE-0914-42D6-9EE9-4F8743EC31A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59E7F0DE-0914-42D6-9EE9-4F8743EC31A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59E7F0DE-0914-42D6-9EE9-4F8743EC31A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
