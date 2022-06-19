@@ -41,6 +41,7 @@ namespace PatternCommand_RemoteController
         }
 
         public void offButtonWasPushed(int slot)
+
         {
             offCommands[slot].execute();
             undoCommand = offCommands[slot];
