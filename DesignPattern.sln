@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatternAdapter_DuckConsole"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternTemplate_CaffeineBeverage", "PatternTemplate_CaffeineBeverage\PatternTemplate_CaffeineBeverage.csproj", "{D33DF5B7-7E9B-495A-9DE0-8EE5C6349446}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternIterator_RestaurantMA", "PatternIterator_RestaurantMA\PatternIterator_RestaurantMA.csproj", "{A137213C-7614-45C7-BF80-6F9875E70C40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{D33DF5B7-7E9B-495A-9DE0-8EE5C6349446}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D33DF5B7-7E9B-495A-9DE0-8EE5C6349446}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D33DF5B7-7E9B-495A-9DE0-8EE5C6349446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A137213C-7614-45C7-BF80-6F9875E70C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A137213C-7614-45C7-BF80-6F9875E70C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A137213C-7614-45C7-BF80-6F9875E70C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A137213C-7614-45C7-BF80-6F9875E70C40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
