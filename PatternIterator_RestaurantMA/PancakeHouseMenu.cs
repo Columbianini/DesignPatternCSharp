@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PatternIterator_RestaurantMA
 {
-    class PancakeHouseMenu
+    class PancakeHouseMenu: Menu
     {
         public List<MenuItem> MenuItems { get; private set; }
 

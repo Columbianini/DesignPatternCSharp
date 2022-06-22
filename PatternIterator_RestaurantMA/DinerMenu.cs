@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PatternIterator_RestaurantMA
 {
-    class DinerMenu
+    class DinerMenu: Menu
     {
         public const int MAX_TIMES = 6;
         private int numberofItems = 0;
