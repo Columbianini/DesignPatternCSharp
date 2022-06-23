@@ -8,13 +8,15 @@ namespace PatternIterator_CSharpeRestaurantMA
 {
     class Waitress
     {
-        PancakeHouseMenu pancakeHouseMenu;
-        DinerMenu dinerMenu;
+        IEnumerable<MenuItem> pancakeHouseMenu;
+        IEnumerable<MenuItem> dinerMenu;
+        IEnumerable<MenuItem> cafeMenu;
 
-        public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu)
+        public Waitress(IEnumerable<MenuItem> pancakeHouseMenu, IEnumerable<MenuItem> dinerMenu, IEnumerable<MenuItem> cafeMenu)
         {
             this.pancakeHouseMenu = pancakeHouseMenu;
             this.dinerMenu = dinerMenu;
+            this.cafeMenu = cafeMenu;
         }
 
         public void printMenu()
@@ -30,6 +32,8 @@ namespace PatternIterator_CSharpeRestaurantMA
             printMenu(pancakeHouseMenu);
             Console.WriteLine("\nLUNCH");
             printMenu(dinerMenu);
+            Console.WriteLine("\nDinner");
+            printMenu(cafeMenu);
         }
 
         private void printMenu(IEnumerable<MenuItem> menu)
