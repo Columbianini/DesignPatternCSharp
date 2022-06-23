@@ -32,7 +32,8 @@ namespace PatternIterator_CSharpeRestaurantMA
             printMenu(pancakeHouseMenu);
             Console.WriteLine("\nLUNCH");
             printMenu(dinerMenu);
-            Console.WriteLine("\nDinner");
+            Console.WriteLine("\nDinner" +
+                "");
             printMenu(cafeMenu);
         }
 
