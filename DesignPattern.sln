@@ -17,15 +17,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatternCommand_RemoteContro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatternAdapter_DuckConsole", "PatternAdapter_DuckConsole\PatternAdapter_DuckConsole.csproj", "{466AA367-45D2-45FB-A967-3DAEFDD960B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternTemplate_CaffeineBeverage", "PatternTemplate_CaffeineBeverage\PatternTemplate_CaffeineBeverage.csproj", "{D33DF5B7-7E9B-495A-9DE0-8EE5C6349446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatternTemplate_CaffeineBeverage", "PatternTemplate_CaffeineBeverage\PatternTemplate_CaffeineBeverage.csproj", "{D33DF5B7-7E9B-495A-9DE0-8EE5C6349446}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternIterator_RestaurantMA", "PatternIterator_RestaurantMA\PatternIterator_RestaurantMA.csproj", "{A137213C-7614-45C7-BF80-6F9875E70C40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatternIterator_RestaurantMA", "PatternIterator_RestaurantMA\PatternIterator_RestaurantMA.csproj", "{A137213C-7614-45C7-BF80-6F9875E70C40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternIterator_CSharpeRestaurantMA", "PatternIterator_CSharpeRestaurantMA\PatternIterator_CSharpeRestaurantMA.csproj", "{5DB0CBD0-AEA2-4CB2-B24A-441039F8DC05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatternIterator_CSharpeRestaurantMA", "PatternIterator_CSharpeRestaurantMA\PatternIterator_CSharpeRestaurantMA.csproj", "{5DB0CBD0-AEA2-4CB2-B24A-441039F8DC05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternIterator_CSharpeRestaurantMA_YieldImplementation", "PatternIterator_CSharpeRestaurantMA_YieldImplementation\PatternIterator_CSharpeRestaurantMA_YieldImplementation.csproj", "{FCFF4D0D-B27F-4099-805D-6A1944E1A5DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatternIterator_CSharpeRestaurantMA_YieldImplementation", "PatternIterator_CSharpeRestaurantMA_YieldImplementation\PatternIterator_CSharpeRestaurantMA_YieldImplementation.csproj", "{FCFF4D0D-B27F-4099-805D-6A1944E1A5DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternComposition_MenuComponent", "PatternComposition_MenuComponent\PatternComposition_MenuComponent.csproj", "{3781EFB5-B35E-46B8-A055-5A0F2AEBB531}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatternComposition_MenuComponent", "PatternComposition_MenuComponent\PatternComposition_MenuComponent.csproj", "{3781EFB5-B35E-46B8-A055-5A0F2AEBB531}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternState_CandyMachine", "PatternState_CandyMachine\PatternState_CandyMachine.csproj", "{8A324703-F727-4917-A405-358697F5B910}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{3781EFB5-B35E-46B8-A055-5A0F2AEBB531}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3781EFB5-B35E-46B8-A055-5A0F2AEBB531}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3781EFB5-B35E-46B8-A055-5A0F2AEBB531}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A324703-F727-4917-A405-358697F5B910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A324703-F727-4917-A405-358697F5B910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A324703-F727-4917-A405-358697F5B910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A324703-F727-4917-A405-358697F5B910}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
