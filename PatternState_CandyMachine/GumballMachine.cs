@@ -8,135 +8,74 @@ namespace PatternState_CandyMachine
 {
     class GumballMachine
     {
-        public const int SOLD_OUT = 0;
-        public const int NO_QUARTER = 1;
-        public const int HAS_QUARTER = 2;
-        public const int SOLD = 3;
+        //public static Random Random = new Random();
+        public State SoldOutState { get; set; }
+        public State SoldState { get; set; }
+        public State WinnerState { get; set; }
+        public State HasQuarterState { get; set; }
+        public State NoQuarterState { get; set; }
 
-        private int state = SOLD;
-        private int count = 0;
+        public State State { get; set; }
+
+        public int Count { get; set; }
 
         public GumballMachine(int count)
         {
-            this.count = count;
-            if (count > 0)
-                state = NO_QUARTER;
+            SoldOutState = new SoldOutState(this);
+            WinnerState = new WinnerState(this);
+            HasQuarterState = new HasQuarterState(this);
+            NoQuarterState = new NoQuarterState(this);
+            SoldState = new SoldState(this);
+            Count = count;
+            if (Count >= 2)
+                State = NoQuarterState;
+            else
+                State = SoldOutState;
         }
 
-        public void insertQuarter()
-        {
-            switch (state)
-            {
-                case HAS_QUARTER:
-                    Console.WriteLine("You cannot insert another quarter");
-                    break;
-                case NO_QUARTER:
-                    Console.WriteLine("You inserted a quarter");
-                    state = HAS_QUARTER;
-                    break;
-                case SOLD_OUT:
-                    Console.WriteLine("You cannot insert a quarter, the machine is sold out");
-                    break;
-                case SOLD:
-                    Console.WriteLine("Please wait, we're already giving you a gumble");
-                    break;
-                default:
-                    throw new NotImplementedException();
-            }
-        }
+        public void insertQuarter() => State.insertQuarter();
 
-
-        public void ejectQuarter()
-        {
-            switch (state)
-            {
-                case HAS_QUARTER:
-                    Console.WriteLine("Quarter returned");
-                    state = NO_QUARTER;
-                    break;
-                case NO_QUARTER:
-                case SOLD_OUT:
-                    Console.WriteLine("You have not inserted a quarter");
-                    break;
-                case SOLD:
-                    Console.WriteLine("Sorry, you already turned the crank");
-                    break;
-                default:
-                    throw new NotImplementedException();
-            }
-        }
+        public void ejectQuarter() => State.ejectQuarter();
 
         public void turnCrank()
         {
-            switch (state)
-            {
-                case NO_QUARTER:
-                    Console.WriteLine("You turned but there is no quarter");
-                    break;
-                case HAS_QUARTER:
-                    Console.WriteLine("You turned ...");
-                    state = SOLD;
-                    dispense();
-                    break;
-                case SOLD:
-                    Console.WriteLine("Turning twice does not get you another gumball");
-                    break;
-                case SOLD_OUT:
-                    Console.WriteLine("You turned but there's no quarter");
-                    break;
-                default:
-                    throw new NotImplementedException();
-            }
+            State.turnCrank();
+            State.dispense();
         }
 
-        public void dispense()
+        public void dispense() => State.dispense();
+
+        public void releaseBall()
         {
-            switch (state)
-            {
-                case SOLD:
-                    Console.WriteLine("A gumball comes rolling out the slot");
-                    count--;
-                    state = count == 0 ? SOLD_OUT : NO_QUARTER;
-                    break;
-                case SOLD_OUT:
-                    Console.WriteLine("No gumball dispensed");
-                    break;
-                case NO_QUARTER:
-                    Console.WriteLine("You need to pay first");
-                    break;
-                case HAS_QUARTER:
-                    Console.WriteLine("You need to turn the crank");
-                    break;
-                default:
-                    throw new NotImplementedException();
-            }
+            Console.WriteLine("A gumball comes rolling out the slot...");
+            if (Count > 0)
+                Count--;
         }
+
+        public void refill(int count)
+        {
+            Count += count;
+            Console.WriteLine($"The gumball machine was just refilled; its new count is {Count}");
+            State.refill();
+        }
+
 
         public override string ToString()
         {
-            string output = $"Might Gumball, Inc\nJava-enabled Standing Gumball Model #2004\nInventory: {count} gumnballs\n";
+            string output = $"\nMight Gumball, Inc\nJava-enabled Standing Gumball Model #2004\nInventory: {Count} gumnballs\n";
 
+            if (State == SoldOutState)
+                output += "Machine is sold out\n";
+            else if (State == SoldState)
+                output += "Machine is dispensing\n";
+            else if (State == HasQuarterState)
+                output += "Machine is waiting for turning the crank or ejecting the quarter\n";
+            else if (State == NoQuarterState)
+                output += "Machine is waiting for quarter\n";
+            else
+                throw new NotImplementedException();
 
-            switch (state)
-            {
-                case SOLD_OUT:
-                    output += "Machine is sold out\n";
-                    break;
-                case SOLD:
-                    output += "Machine is dispensing\n";
-                    break;
-                case HAS_QUARTER:
-                    output += "Machine is waiting for turning the crank or ejecting the quarter\n";
-                    break;
-                case NO_QUARTER:
-                    output += "Machine is waiting for quarter\n";
-                    break;
-                default:
-                    throw new NotImplementedException();
-            }
             return output;
         }
-
-
     }
 }
